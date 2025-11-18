@@ -1,15 +1,19 @@
 package com.ui.tests;
 
-import com.ui.pojos.User;
 import com.constants.Browser;
 import com.ui.pages.HomePage;
+import com.ui.pojos.User;
+import com.utility.LoggerUtility;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(com.ui.listeners.TestListener.class)
+public class LoginTest5_4_Log4j_WithListener {
 
-public class LoginTest5_1 {
     HomePage homePage;
 
 
@@ -18,7 +22,9 @@ public class LoginTest5_1 {
         homePage = new HomePage(Browser.CHROME);
     }
 
-@Test(description = "Verify valid user is able to login into the application", groups = {"smoke","e2e"},dataProviderClass = com.ui.dataProviders.LoginDataProvider.class,dataProvider = "LoginTestDataProvider")
+
+@Test(description = "Verify valid user is able to login into the application", groups = {"smoke","e2e"},
+        dataProviderClass = com.ui.dataProviders.LoginDataProvider.class,dataProvider = "LoginTestDataProvider")
     public void loginTest(User user) {
         //WebDriver wd = new ChromeDriver();
 

@@ -1,7 +1,7 @@
 package com.ui.dataProviders;
 
-import com.com.ui.pojos.TestData;
-import com.com.ui.pojos.User;
+import com.ui.pojos.TestData;
+import com.ui.pojos.User;
 import com.google.gson.Gson;
 import com.utility.ExcelReaderUtility;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;

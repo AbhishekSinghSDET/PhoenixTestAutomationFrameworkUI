@@ -1,15 +1,18 @@
 package com.ui.tests;
 
-import com.ui.pojos.User;
 import com.constants.Browser;
 import com.ui.pages.HomePage;
+import com.ui.pojos.User;
+import com.utility.LoggerUtility;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 
-public class LoginTest5_1 {
+public class LoginTest5_3_Log4j {
+
     HomePage homePage;
 
 
@@ -18,7 +21,9 @@ public class LoginTest5_1 {
         homePage = new HomePage(Browser.CHROME);
     }
 
-@Test(description = "Verify valid user is able to login into the application", groups = {"smoke","e2e"},dataProviderClass = com.ui.dataProviders.LoginDataProvider.class,dataProvider = "LoginTestDataProvider")
+
+@Test(description = "Verify valid user is able to login into the application", groups = {"smoke","e2e"},
+        dataProviderClass = com.ui.dataProviders.LoginDataProvider.class,dataProvider = "LoginTestDataProvider")
     public void loginTest(User user) {
         //WebDriver wd = new ChromeDriver();
 
@@ -26,7 +31,10 @@ public class LoginTest5_1 {
 //        String userName = homePage.goToLoginPage().doLoginWith("16abhisingh@gmail.com","Abhi@12345").getUserName();
 //        Assert.assertEquals(userName,"Abhishek Singh");
 
+    Logger logger = LoggerUtility.getLogger(this.getClass());
+    logger.info("Started my login test");
         Assert.assertEquals(homePage.goToLoginPage().doLoginWith(user.getEmailAddress(), user.getPassword()).getUserName(),"Abhishek Singh");
+    logger.info("Completed my login test");
     }
 
 @AfterMethod

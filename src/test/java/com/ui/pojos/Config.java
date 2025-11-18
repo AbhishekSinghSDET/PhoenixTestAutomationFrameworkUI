@@ -1,6 +1,5 @@
-package com.com.ui.pojos;
+package com.ui.pojos;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class Config {

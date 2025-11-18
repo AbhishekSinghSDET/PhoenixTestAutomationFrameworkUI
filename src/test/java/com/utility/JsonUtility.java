@@ -1,7 +1,7 @@
 package com.utility;
 
-import com.com.ui.pojos.Config;
-import com.com.ui.pojos.Environment;
+import com.ui.pojos.Config;
+import com.ui.pojos.Environment;
 import com.constants.Env;
 import com.google.gson.Gson;
 
@@ -13,7 +13,7 @@ public class JsonUtility {
 
     //to read json file
 
-    public static String readJSON(Env env) {
+    public static Environment readJSON(Env env) {
         Gson gson = new Gson();
         FileReader fileReader;
         File jsonFile = new File(System.getProperty("user.dir")+"/config/config.json");
@@ -25,7 +25,7 @@ public class JsonUtility {
 
         Config config = gson.fromJson(fileReader, Config.class);
         Environment environment= config.getEnvironments().get("QA");
-        return environment.getUrl();
+        return environment;
 
     }
 }

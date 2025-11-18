@@ -1,24 +1,23 @@
 package com.ui.tests;
 
-import com.ui.pojos.User;
 import com.constants.Browser;
 import com.ui.pages.HomePage;
+import com.ui.pojos.User;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
-
-public class LoginTest5_1 {
-    HomePage homePage;
-
+@Listeners(com.ui.listeners.TestListener.class)
+public class LoginTest5_6_LamdaTest extends BaseTest{
 
     @BeforeMethod(description = "Load homepage of the website")
     public void setUp(){
-        homePage = new HomePage(Browser.CHROME);
+
+        homePage = new HomePage(Browser.CHROME,true);
     }
 
-@Test(description = "Verify valid user is able to login into the application", groups = {"smoke","e2e"},dataProviderClass = com.ui.dataProviders.LoginDataProvider.class,dataProvider = "LoginTestDataProvider")
+
+@Test(description = "Verify valid user is able to login into the application", groups = {"smoke","e2e"},
+        dataProviderClass = com.ui.dataProviders.LoginDataProvider.class,dataProvider = "LoginTestDataProvider")
     public void loginTest(User user) {
         //WebDriver wd = new ChromeDriver();
 

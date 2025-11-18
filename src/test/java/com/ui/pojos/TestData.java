@@ -1,4 +1,4 @@
-package com.com.ui.pojos;
+package com.ui.pojos;
 
 import java.util.List;
 

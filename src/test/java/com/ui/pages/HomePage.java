@@ -19,6 +19,16 @@ public final class HomePage extends BrowserUtility {
         goToWebsite(PropertiesUtil.readProperty(Env.QA,"URL"));
     }
 
+    public HomePage(Browser browserName, boolean isHeadless) {
+        super(String.valueOf(browserName),isHeadless);  // To call parent class constructor from child class
+        //  goToWebsite("http://www.automationpractice.pl/index.php");
+        goToWebsite(PropertiesUtil.readProperty(Env.QA,"URL"));
+    }
+
+    public HomePage(WebDriver driver) {
+        super(driver);
+    }
+
     public LoginPage goToLoginPage(){  // These are called as Page Functions and Page Functions return type -
         //cannot be void, we will give the return type of that page which will be coming after action
         clickOn(SIGN_IN_LOCATOR);
