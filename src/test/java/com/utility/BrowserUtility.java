@@ -45,7 +45,7 @@ public abstract class BrowserUtility {
         if(browserName.equalsIgnoreCase("chrome")){
             driver.set(new ChromeDriver());
         }
-        else if(browserName.equalsIgnoreCase("Edeg")){
+        else if(browserName.equalsIgnoreCase("Edge")){
             driver.set(new EdgeDriver());
         }
         else {
