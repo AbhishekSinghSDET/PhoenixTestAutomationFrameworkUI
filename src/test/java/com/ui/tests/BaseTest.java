@@ -32,6 +32,7 @@ public class BaseTest {
             lamdaDriver = LamdaTestUtility.initializeLamdaTestSession(browser,result.getMethod().getMethodName());
             homePage = new HomePage(lamdaDriver);
         }
+
         else {
             //Run test on local machine
             homePage = new HomePage(Browser.valueOf(browser.toUpperCase()), isHeadless);
