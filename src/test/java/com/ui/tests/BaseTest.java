@@ -19,6 +19,7 @@ public class BaseTest {
     Logger logger = LoggerUtility.getLogger(this.getClass());
     private boolean isLamdaTest;
 
+
     @Parameters({"browser","isLamdaTest","isHeadless"})
     @BeforeMethod(description = "Load homepage of the website")
     public void setUp(
