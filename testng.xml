@@ -6,7 +6,7 @@
         <parameter name="isLamdaTest" value="false"/>
         <parameter name="isHeadless" value="false"/>
         <classes>
-            <class name="com.ui.tests.LoginTest5_6_LamdaTest"/>
+            <class name="com.ui.tests.LoginTest5_1"/>
         </classes>
     </test>
 </suite>
